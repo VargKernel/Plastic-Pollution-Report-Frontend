@@ -12,4 +12,4 @@ This web application visualizes the global plastic waste crisis. The goal of the
 All statistics are based on open-source scientific reports from **OECD** and **Science Advances** (Geyer et al.).
 
 ---
-*Created for the Global Environmental Report 2026.*
+*Scientific Visualization — Group Project 2026.*
