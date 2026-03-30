@@ -4,8 +4,7 @@ import { Users, Leaf, AlertCircle, Droplet, Fish, Trash2, Recycle, TrendingUp, G
 const App = () => {
   const team = [
     { name: "Artem Peresada", role: "Backend / Logic / Design", task: "Integration of API data, pollution statistics and design" },
-    { name: "Mihailo Petrović", role: "DevOps / Deploy / Design", task: "Site deployment, maintenance and design" },
-    { name: "Gemini", role: "Content", task: "Copywriting" }
+    { name: "Mihailo Petrović", role: "DevOps / Deploy / Design", task: "Site deployment, maintenance and design" }
   ];
 
   const statistics = [
