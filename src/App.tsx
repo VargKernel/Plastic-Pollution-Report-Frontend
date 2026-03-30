@@ -3,8 +3,14 @@ import { Users, Leaf, AlertCircle, Droplet, Fish, Trash2, Recycle, TrendingUp, G
 
 const App = () => {
   const team = [
-    { name: "Artem Peresada", role: "Backend / Logic / Design", task: "Integration of API data, pollution statistics and design" },
-    { name: "Mihailo Petrović", role: "DevOps / Deploy / Design", task: "Site deployment, maintenance and design" }
+    { name: "Artem Peresada",
+        role: "Backend / Logic / Design",
+        task: "Integration of API data, pollution statistics and design",
+        github: "REvDl"},
+    { name: "Mihailo Petrović",
+        role: "DevOps / Deploy / Design",
+        github: "VargKernel",
+        task: "Site deployment, maintenance and design" }
   ];
 
   const statistics = [
@@ -217,20 +223,45 @@ const App = () => {
           </div>
 
           {/* Team */}
-          <div className="lg:col-span-2 bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
-            <div className="flex items-center mb-8">
-              <Users className="w-6 h-6 mr-3 text-blue-600" />
-              <h2 className="text-2xl font-bold tracking-tight">Project Contributors</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {team.map((member, index) => (
-                <div key={index}>
-                  <h4 className="font-bold text-slate-900">{member.name}</h4>
-                  <p className="text-xs text-blue-600 font-bold uppercase tracking-widest mt-1 mb-2">{member.role}</p>
-                  <p className="text-xs text-slate-500 italic leading-relaxed">{member.task}</p>
+        <div className="lg:col-span-2 bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+          <div className="flex items-center mb-8">
+            <Users className="w-6 h-6 mr-3 text-blue-600" />
+            <h2 className="text-2xl font-bold tracking-tight">Project Contributors</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> {/* Поменял на 2 колонки, так как вас двое */}
+            {team.map((member, index) => (
+              <div key={index} className="flex items-center space-x-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors group">
+                {/* Аватарка-ссылка */}
+                <a
+                  href={`https://github.com/${member.github}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="relative shrink-0"
+                >
+                  <img
+                    src={`https://github.com/${member.github}.png`}
+                    alt={member.name}
+                    className="w-16 h-16 rounded-full border-2 border-blue-100 group-hover:border-blue-500 transition-all shadow-sm object-cover"
+                  />
+                  <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-1 shadow-md border border-slate-100">
+                    <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-blue-600" />
+                  </div>
+                </a>
+
+                {/* Инфо о мембере */}
+                <div>
+                  <h4 className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    {member.name}
+                  </h4>
+                  <p className="text-[10px] text-blue-600 font-black uppercase tracking-widest mt-0.5 mb-1">
+                    {member.role}
+                  </p>
+                  <p className="text-[11px] text-slate-500 italic leading-snug max-w-[200px]">
+                    {member.task}
+                  </p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
